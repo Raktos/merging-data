@@ -14,7 +14,7 @@
         
     </head>
     <body>
-        <main class="container-fluid">
+        <main class="container-fluid" ng-app="employeeApp" ng-controller="employeeController">
             <header class="page-title">
                 <h1>City of Pawnee Address Book</h1>
             </header>
@@ -37,13 +37,13 @@
 
             <section>
                 <ul class="cards">
-                    <li class="card">
+                    <li class="card" ng-repeat="employee in employeeList">
                         <!-- this img should show the employee picture --> 
-                        <img alt="">
+                        <img src="{{employee.picUrl}}" alt="{{employee.firstName}} {{employee.lastName}}">
                         <div class="details">
-                            <h2 class="name"> <!-- employee name goes here --> </h2>
-                            <p class="title"> <!-- employee title goes here --> </p>
-                            <p class="department"> <!-- employee department goes here --> </p>
+                            <h2 class="name">{{employee.firstName}} {{employee.lastName}}</h2>
+                            <p class="title">{{employee.title}}</p>
+                            <p class="department">{{employee.department}}</p>
                             <p class="phone"><a> <!-- employee phone goes here (if present); hyperlink should dial number on mobile phone --> </a></p>
                             <p class="email"><a> <!-- employee email goes here (if present); hyperlink should open a new email to email address --> </a></p>
                         </div>
