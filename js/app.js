@@ -8,8 +8,15 @@
 
 "use strict";
 
-angular.module('employeeApp', [])
-    .controller('employeeController', function($scope) {
-        $scope.employeeList = pawneeEmployees;
-    }
+angular.module('AddressBook', [])
+    .controller('AddressController', function($scope) {
+        $scope.employees = pawneeEmployees;
+        $scope.order = 'lastName';
+        $scope.searchString = '';
+        $scope.sortCol = 'lastName';
+
+        $scope.sortBy = function(colName) {
+            $scope.sortCol = colName;
+        };
+     }
 );
