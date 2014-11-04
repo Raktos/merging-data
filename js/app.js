@@ -13,10 +13,9 @@ angular.module('AddressBook', [])
         $scope.employees = pawneeEmployees;
         $scope.order = 'lastName';
         $scope.searchString = '';
-        $scope.sortCol = 'lastName';
 
         $scope.sortBy = function(colName) {
-            $scope.sortCol = colName;
+            $scope.order = colName;
         };
      }
 );

@@ -24,9 +24,9 @@
                 <div class="sort-ui">
                     <span>Sort By: </span>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-default" ng-click="sortBy('lastName')">Last Name</button>
-                        <button type="button" class="btn btn-default" ng-click="sortBy('firstName')">First Name</button>
-                        <button type="button" class="btn btn-default" ng-click="sortBy('department')">Department</button>
+                        <button type="button" class="btn btn-default" ng-click="sortBy('lastName')" ng-class="{active: order == 'lastName'}">Last Name</button>
+                        <button type="button" class="btn btn-default" ng-click="sortBy('firstName')" ng-class="{active: order == 'firstName'}">First Name</button>
+                        <button type="button" class="btn btn-default" ng-click="sortBy('department')" ng-class="{active: order == 'department'}">Department</button>
                     </div>
                 </div>
                 <!-- filter input; you will add attributes to make this filter the list based on value entered -->
@@ -37,7 +37,7 @@
 
             <section>
                 <ul class="cards">
-                    <li class="card" ng-repeat="employee in filteredEmployees = (employees | filter : searchString | orderBy : sortCol)">
+                    <li class="card" ng-repeat="employee in filteredEmployees = (employees | filter : searchString | orderBy : order)">
                         <!-- this img should show the employee picture --> 
                         <img src="{{employee.picUrl}}" alt="picture of {{employee.firstName}} {{employee.lastName}}">
                         <div class="details">
